@@ -1,0 +1,17 @@
+{
+  "name": "FrenoCheck – Calcolo frenatura MdO",
+  "short_name": "FrenoCheck",
+  "description": "Massa frenata, velocità, composizione e M.40 per i convogli di mezzi d'opera (DOIT Trieste).",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1d2420",
+  "theme_color": "#1d2420",
+  "lang": "it",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

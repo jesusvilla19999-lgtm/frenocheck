@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FrenoCheck</title>
+<meta name="theme-color" content="#1d2420">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="FrenoCheck">
+<style>
+  html,body{margin:0;height:100%;background:#1d2420;color:#e9ece6;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#eef0ec;
+    padding-top:env(safe-area-inset-top,0px);box-sizing:border-box}
+  #off{position:fixed;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box}
+  #off b{color:#e8b400;font-size:20px}
+  #off button{margin-top:14px;font:inherit;font-weight:600;padding:10px 18px;border-radius:8px;border:0;background:#e8b400;color:#1d2420}
+</style>
+</head>
+<body>
+<iframe id="app" title="Calcolo frenatura MdO" src="https://script.google.com/macros/s/AKfycbwKFQp2f-aDpjdmsDlbjEdt3_M36eVQX3JbeKPPsSbUto7LdubgOSSR-Cid5nHY6C1x/exec" allow="clipboard-write"></iframe>
+<div id="off"><div><b>Nessuna connessione</b><p>FrenoCheck usa sempre la versione aggiornata dei dati: serve la rete per aprirlo.</p><button type="button" onclick="location.reload()">Riprova</button></div></div>
+<script>
+  function chk(){var o=!navigator.onLine;document.getElementById('off').style.display=o?'flex':'none';document.getElementById('app').style.display=o?'none':'block'}
+  window.addEventListener('online',function(){location.reload()});window.addEventListener('offline',chk);chk();
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+</script>
+</body>
+</html>
